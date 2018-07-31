@@ -16,28 +16,18 @@ class Circle {
             this.color = COLORS[randomIndex];
         }
             
-        this.velX = 0;
-        this.velY = 0;
+        this.speed = 1;
+        this.angle = Math.random() * Math.PI * 2;
         this.isPlayer = isPlayer;
         this.target = target;
         this.isDead = false;
     }
     move() {
-        this.x += this.velX;
-        this.y += this.velY;
+        let dx = this.speed * Math.cos(this.angle);
+        let dy = this.speed * Math.sin(this.angle);
 
-        if (!this.isPlayer) {
-            if (this.x < this.target.x) {
-                this.x += 0.5;
-            } else {
-                this.x -= 0.5;
-            }
-            if (this.y < this.target.y) {
-                this.y += 0.5;
-            } else {
-                this.y -= 0.5;
-            }
-        }
+        this.x += dx;
+        this.y += dy;
     }
     draw() {
         pen.beginPath();

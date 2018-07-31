@@ -4,6 +4,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let circle = new Circle(true);
+circle.angle = 0;
+
 let enemies = [];
 for(let i=0; i<5; i++) {
     enemies[i] = new Circle(false, circle);
@@ -12,19 +14,19 @@ for(let i=0; i<5; i++) {
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'a') {
-        circle.velX = Math.max(circle.velX - 0.5, -2);
+        
     }
     if (event.key === 'w') {
-        circle.velY = Math.max(circle.velY - 0.5, -2);
+        
     }
     if (event.key === 'd') {
-        circle.velX = Math.min(circle.velX + 0.5, 2);
+        
     }
     if (event.key === 's') {
-        circle.velY = Math.min(circle.velY + 0.5, 2);
+        
     }
     if (event.key === 'f') {
-        circle.velX = circle.velY = 0;
+        
     }
 });
 
